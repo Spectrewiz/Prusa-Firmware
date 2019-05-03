@@ -264,6 +264,11 @@
 
 #define TMC2130_SERVICE_CODES_M910_M918
 
+#define TMC2130_HSTRT_X 5    // hysteresis start setting for X axis
+#define TMC2130_HSTRT_Y 5    // hysteresis start setting for Y axis
+#define TMC2130_HSTRT_Z 5    // hysteresis start setting for Z axis
+#define TMC2130_HSTRT_E 5    // hysteresis start setting for E axis
+
 //#define TMC2130_DEBUG
 //#define TMC2130_DEBUG_WR
 //#define TMC2130_DEBUG_RD

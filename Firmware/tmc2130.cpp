@@ -55,10 +55,10 @@ uint8_t tmc2130_home_fsteps[2] = {48, 48};
 uint8_t tmc2130_wave_fac[4] = {0, 0, 0, 0};
 
 tmc2130_chopper_config_t tmc2130_chopper_config[4] = {
-	{TMC2130_TOFF_XYZ, 5, 1, 2, 0},
-	{TMC2130_TOFF_XYZ, 5, 1, 2, 0},
-	{TMC2130_TOFF_XYZ, 5, 1, 2, 0},
-	{TMC2130_TOFF_E, 5, 1, 2, 0}
+	{TMC2130_TOFF_XYZ, TMC2130_HSTRT_X, 1, 2, 0},
+	{TMC2130_TOFF_XYZ, TMC2130_HSTRT_Y, 1, 2, 0},
+	{TMC2130_TOFF_XYZ, TMC2130_HSTRT_Z, 1, 2, 0},
+	{TMC2130_TOFF_E, TMC2130_HSTRT_E, 1, 2, 0}
 };
 
 bool tmc2130_sg_stop_on_crash = true;
