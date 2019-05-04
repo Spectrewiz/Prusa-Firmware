@@ -269,6 +269,11 @@
 #define TMC2130_HSTRT_Z 5    // hysteresis start setting for Z axis
 #define TMC2130_HSTRT_E 5    // hysteresis start setting for E axis
 
+#define TMC2130_HEND_X  1    // hysteresis end setting for X axis
+#define TMC2130_HEND_Y  1    // hysteresis end setting for Y axis
+#define TMC2130_HEND_Z  1    // hysteresis end setting for Z axis
+#define TMC2130_HEND_E  1    // hysteresis end setting for E axis
+
 //#define TMC2130_DEBUG
 //#define TMC2130_DEBUG_WR
 //#define TMC2130_DEBUG_RD

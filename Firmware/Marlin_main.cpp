@@ -6884,7 +6884,7 @@ if((eSoundMode==e_SOUND_MODE_LOUD)||(eSoundMode==e_SOUND_MODE_ONCE))
     }
     break;
 
-  case 919: //! M919 - Set TMC2130 hstrt
+  case 919: //! M919 - Set TMC2130 hstrt (hint hysteresis start is hstrt + 1, hstrt can be 0-7)
     {
       if (code_seen('X')) tmc2130_chopper_config[X_AXIS].hstr = code_value_uint8();
       if (code_seen('Y')) tmc2130_chopper_config[Y_AXIS].hstr = code_value_uint8();
@@ -6896,6 +6896,18 @@ if((eSoundMode==e_SOUND_MODE_LOUD)||(eSoundMode==e_SOUND_MODE_ONCE))
       }
     }
     break;
+
+  case 920: //! M920 - Set TMC2130 hend (hint hysteresis end is hend - 3, hend can be 0-15)
+    {
+      if (code_seen('X')) tmc2130_chopper_config[X_AXIS].hend = code_value_uint8();
+      if (code_seen('Y')) tmc2130_chopper_config[Y_AXIS].hend = code_value_uint8();
+      if (code_seen('Z')) tmc2130_chopper_config[Z_AXIS].hend = code_value_uint8();
+      if (code_seen('E')) tmc2130_chopper_config[E_AXIS].hend = code_value_uint8();
+      for (uint8_t a = X_AXIS; a <= E_AXIS; a++) {
+        tmc2130_setup_chopper(a, tmc2130_mres[a], tmc2130_current_h[a], tmc2130_current_r[a]);
+        printf_P(_N("tmc2130_hend[%c]=%d\n"), "XYZE"[a], tmc2130_chopper_config[a].hend);
+      }
+    }
 
 #endif //TMC2130_SERVICE_CODES_M910_M918
 
